@@ -1,0 +1,129 @@
+<html>
+
+<head>
+
+<style>
+
+body
+{
+text-align:center;
+background-color:#00BFFF;
+}
+
+h1
+{
+text-align:center;
+font-family:verdana;
+font-weight:bold;
+margin-top:50px;
+font-size:100px;
+}
+
+#days
+{
+outline: 15px solid #FF00FF;
+background: white;
+position:relative;
+display: inline-block;
+padding: 10px;
+border: 3px solid;
+margin-left:50px;
+margin-top:250px; 
+font-size:30px; 
+}
+
+#hours
+{
+outline: 15px solid #FF00FF;
+background: white;
+position:relative;
+display: inline-block;
+padding: 10px;
+border: 3px solid;
+margin-left:50px;
+margin-top:250px;
+font-size:30px; 
+}
+
+#minutes
+{
+outline: 15px solid #FF00FF;
+background: white;
+position:relative;
+display: inline-block;
+padding: 10px;
+border: 3px solid;
+margin-left:50px;
+margin-top:250px; 
+font-size:30px; 
+}
+
+#seconds
+{
+outline: 15px solid #FF00FF;
+background: white;
+position:relative;
+display: inline-block;
+padding: 10px;
+border: 3px solid;
+margin-left:50px;
+margin-top:250px;
+font-size:30px; 
+}
+
+#p1
+{
+font-size:75px;
+font-weight:bold;
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+<h1>IPL FINALS</h1>
+
+<p id="days"></p>
+<p id="minutes"></p>
+<p id="hours"></p>
+<p id="seconds"></p>
+
+
+<script>
+
+var msec,dd,hr,minu,sec,now,some;
+var y=setInterval(timer,1000);
+
+function timer()
+{
+now=Date.parse(new Date());
+some= Date.parse("May 30,2016");
+msec=some-now;
+dd=Math.floor(msec/(24*60*60*1000));
+hr=Math.floor(((msec/(60*60*1000))%24));
+minu=Math.floor(((msec/(60*1000))%60));
+sec=Math.floor(((msec/1000)%60));
+
+document.getElementById("days").innerHTML= dd + "<br>Days" ;
+document.getElementById("hours").innerHTML= hr + "<br>Hours";
+document.getElementById("minutes").innerHTML= minu + "<br>Minutes";
+document.getElementById("seconds").innerHTML= sec + "<br>Seconds";
+
+if(msec<=0)
+{
+clearInterval(y);
+}
+
+}
+
+</script>
+
+<p id="p1">to go....</p>
+
+</body>
+
+</html>
